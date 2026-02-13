@@ -3,18 +3,17 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-
-<BorderPane fx:controller="com.dam.arturoexameninterfaces.controller.RegisterController" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.dam.arturoexameninterfaces.controller.RegisterController">
    <center>
       <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="15.0" BorderPane.alignment="CENTER">
          <children>
             <Label text="Registre su usuario" />
-            <Label  text="Nombre Usuario:" />
+            <Label text="Nombre Usuario:" />
             <TextField fx:id="nombreTF" maxWidth="-Infinity" />
             <Label text="Contraseña:" />
             <PasswordField fx:id="contrasenaTF" maxWidth="-Infinity" />
-            <Button fx:id="registerBTN" onAction="#handleRegistro" mnemonicParsing="false" text="Registro" />
-            <Button fx:id="volverBTN" onAction="#handleVolver" mnemonicParsing="false" text="Volver" />
+            <Button fx:id="registerBTN" mnemonicParsing="false" onAction="#handleRegistro" text="Registro" />
+            <Button fx:id="volverBTN" mnemonicParsing="false" onAction="#handleVolver" text="Volver" />
          </children>
       </VBox>
    </center>
