@@ -12,6 +12,8 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 
 import java.net.URL;
 import java.time.LocalDate;
@@ -59,7 +61,10 @@ public class HomeController implements Initializable {
     EquipoDAO  equipoDAO = new EquipoDAO();
 
     public boolean comprobarCampos(){
-        return !(nombreCrudTF.getText().isEmpty() && fechaCrudDP.getValue()==null);
+        if(nombreCrudTF.getText().isEmpty() || fechaCrudDP.getValue() == null) {
+            return false;
+        }
+        return true;
     }
 
     public void handleCerrarSesion(ActionEvent actionEvent) {
@@ -156,16 +161,34 @@ public class HomeController implements Initializable {
         fechaColumn.setCellValueFactory(new PropertyValueFactory<>("fecha_fundacion"));
         fotoColumn.setCellValueFactory(new PropertyValueFactory<>("foto_url"));
 
+        fotoColumn.setCellFactory(column -> new TableCell<Equipo,String>() {
+
+            private ImageView imageView = new ImageView();
+            @Override
+            protected void updateItem(String url, boolean empty) {
+                super.updateItem(url, empty);
+                if (empty || url == null) {
+                    setGraphic(null);
+                }
+                else {
+                    try {
+                        Image image = new Image(url,40,40,true,true);
+                        imageView.setImage(image);
+                        setGraphic(imageView);
+                    } catch (Exception e) {
+                        setGraphic(null);
+                        e.printStackTrace();
+                        System.out.println("error en imagenes");
+                    }
+                }
+            }
+        });
+
         cargarEquipos();
 
         tablaEquiposTV.getSelectionModel().selectedItemProperty().addListener((observableValue, oldEquipo, equipo) -> {
             rellenarCampos(equipo);
         });
-
-
-
-
-
 
     }
 

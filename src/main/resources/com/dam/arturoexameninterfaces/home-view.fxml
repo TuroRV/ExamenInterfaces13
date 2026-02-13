@@ -3,8 +3,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-
-<BorderPane fx:controller="com.dam.arturoexameninterfaces.controller.HomeController" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.dam.arturoexameninterfaces.controller.HomeController">
    <top>
       <HBox alignment="CENTER_RIGHT" prefHeight="74.0" prefWidth="600.0" BorderPane.alignment="CENTER">
          <children>
@@ -16,7 +15,7 @@
                         <Label fx:id="usuarioLogueadoLabel" text="Label" />
                      </children>
                   </HBox>
-                  <Button fx:id="cerrarsesionBTN" onAction="#handleCerrarSesion" mnemonicParsing="false" text="Cerrar Sesión" />
+                  <Button fx:id="cerrarsesionBTN" mnemonicParsing="false" onAction="#handleCerrarSesion" text="Cerrar Sesión" />
                </children>
             </VBox>
          </children>
@@ -44,7 +43,7 @@
             </HBox>
             <Label text="Nombre:" />
             <TextField fx:id="nombreCrudTF" />
-            <CheckBox fx:id="campeonCrudCB" mnemonicParsing="false" text="CheckBox" />
+            <CheckBox fx:id="campeonCrudCB" mnemonicParsing="false" text="Campeón" />
             <Label text="Fecha Fundación" />
             <DatePicker fx:id="fechaCrudDP" />
             <Label text="Url Foto" />
@@ -60,12 +59,14 @@
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <Button fx:id="crearBTN" onAction="#handleCrear" mnemonicParsing="false" text="Crear" />
-                  <Button fx:id="editarBTN" onAction="#handleEditar" mnemonicParsing="false" text="Editar" GridPane.columnIndex="1" />
-                  <Button fx:id="eliminarBTN" onAction="#handleEliminar" mnemonicParsing="false" text="Eliminar" GridPane.rowIndex="1" />
-                  <Button fx:id="limpiarBTN" onAction="#handleLimpiar" mnemonicParsing="false" text="Limpiar" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <Button fx:id="crearBTN" mnemonicParsing="false" onAction="#handleCrear" text="Crear" />
+                  <Button fx:id="editarBTN" mnemonicParsing="false" onAction="#handleEditar" text="Editar" GridPane.columnIndex="1" />
+                  <Button fx:id="eliminarBTN" mnemonicParsing="false" onAction="#handleEliminar" text="Eliminar" GridPane.rowIndex="1" />
+                  <Button fx:id="limpiarBTN" mnemonicParsing="false" onAction="#handleLimpiar" text="Limpiar" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="114.0" text="Añadir a Favorito)" GridPane.rowIndex="2" />
                </children>
             </GridPane>
+            <Label text="Favoritos Solo versión de pago" />
          </children>
       </VBox>
    </right>
