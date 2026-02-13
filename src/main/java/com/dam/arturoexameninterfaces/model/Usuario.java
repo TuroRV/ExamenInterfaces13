@@ -34,4 +34,11 @@ public class Usuario {
     public void setPassword(String password) {
         this.password = password;
     }
+
+    public boolean isAdmin() {
+        return isAdmin;
+    }
+    public void setIsAdmin(boolean isAdmin) {
+        this.isAdmin = isAdmin;
+    }
 }

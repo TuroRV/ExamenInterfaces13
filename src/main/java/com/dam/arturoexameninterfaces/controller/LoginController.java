@@ -36,6 +36,9 @@ public class LoginController {
                 AppShell.getInstance().setUsuario(usuarioALoguear);
                 AppShell.getInstance().changeView(View.HOME);
             }
+            else {
+                Alertas.showStandardAlert("Error","Error en login, credenciales incorrectas", Alert.AlertType.ERROR);
+            }
         }
         else {
             Alertas.showStandardAlert("Error","Rellena los cammpos", Alert.AlertType.ERROR);

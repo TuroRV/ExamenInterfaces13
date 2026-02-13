@@ -4,7 +4,7 @@
 <?import javafx.scene.layout.*?>
 
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane fx:controller="com.dam.arturoexameninterfaces.controller.HomeController" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1">
    <top>
       <HBox alignment="CENTER_RIGHT" prefHeight="74.0" prefWidth="600.0" BorderPane.alignment="CENTER">
          <children>
@@ -13,23 +13,23 @@
                   <HBox alignment="CENTER" prefHeight="24.0" prefWidth="100.0">
                      <children>
                         <Label text="Usuario: " />
-                        <Label text="Label" />
+                        <Label fx:id="usuarioLogueadoLabel" text="Label" />
                      </children>
                   </HBox>
-                  <Button mnemonicParsing="false" text="Cerrar Sesión" />
+                  <Button fx:id="cerrarsesionBTN" onAction="#handleCerrarSesion" mnemonicParsing="false" text="Cerrar Sesión" />
                </children>
             </VBox>
          </children>
       </HBox>
    </top>
    <center>
-      <TableView prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+      <TableView fx:id="tablaEquiposTV" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
         <columns>
-          <TableColumn prefWidth="75.0" text="ID" />
-          <TableColumn prefWidth="75.0" text="NOMBRE" />
-            <TableColumn prefWidth="75.0" text="CAMPEON" />
-            <TableColumn prefWidth="75.0" text="FECHA FUNDACION" />
-            <TableColumn prefWidth="75.0" text="FOTO" />
+          <TableColumn fx:id="idColumn" prefWidth="75.0" text="ID" />
+          <TableColumn fx:id="nombreColumn" prefWidth="75.0" text="NOMBRE" />
+            <TableColumn fx:id="campeonColumn" prefWidth="75.0" text="CAMPEON" />
+            <TableColumn fx:id="fechaColumn" prefWidth="75.0" text="FECHA FUNDACION" />
+            <TableColumn fx:id="fotoColumn" prefWidth="75.0" text="FOTO" />
         </columns>
       </TableView>
    </center>
@@ -39,16 +39,16 @@
             <HBox alignment="CENTER" prefHeight="32.0" prefWidth="100.0">
                <children>
                   <Label text="ID: " />
-                  <Label text="Label" />
+                  <Label fx:id="idCrudLabel" text="Label" />
                </children>
             </HBox>
             <Label text="Nombre:" />
-            <TextField />
-            <CheckBox mnemonicParsing="false" text="CheckBox" />
+            <TextField fx:id="nombreCrudTF" />
+            <CheckBox fx:id="campeonCrudCB" mnemonicParsing="false" text="CheckBox" />
             <Label text="Fecha Fundación" />
-            <DatePicker />
+            <DatePicker fx:id="fechaCrudDP" />
             <Label text="Url Foto" />
-            <TextField />
+            <TextField fx:id="fotoCrudTF" />
             <GridPane>
               <columnConstraints>
                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -60,10 +60,10 @@
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <Button mnemonicParsing="false" text="Crear" />
-                  <Button mnemonicParsing="false" text="Editar" GridPane.columnIndex="1" />
-                  <Button mnemonicParsing="false" text="Eliminar" GridPane.rowIndex="1" />
-                  <Button mnemonicParsing="false" text="Limpiar" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <Button fx:id="crearBTN" onAction="#handleCrear" mnemonicParsing="false" text="Crear" />
+                  <Button fx:id="editarBTN" onAction="#handleEditar" mnemonicParsing="false" text="Editar" GridPane.columnIndex="1" />
+                  <Button fx:id="eliminarBTN" onAction="#handleEliminar" mnemonicParsing="false" text="Eliminar" GridPane.rowIndex="1" />
+                  <Button fx:id="limpiarBTN" onAction="#handleLimpiar" mnemonicParsing="false" text="Limpiar" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                </children>
             </GridPane>
          </children>

@@ -79,4 +79,12 @@ public class Equipo {
     public void setFecha_fundacion(LocalDate fecha_fundacion) {
         this.fecha_fundacion = fecha_fundacion;
     }
+
+    public String getFoto_url() {
+        return foto_url;
+    }
+
+    public void setFoto_url(String foto_url) {
+        this.foto_url = foto_url;
+    }
 }
