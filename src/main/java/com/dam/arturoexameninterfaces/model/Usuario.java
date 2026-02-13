@@ -9,12 +9,14 @@ public class Usuario {
     @Id
     private String username;
     private String password;
+    private boolean isAdmin;
 
     public Usuario(){}
 
     public Usuario(String username, String password) {
         this.username = username;
         this.password = password;
+        this.isAdmin = false;
     }
 
     public String getUsername() {
